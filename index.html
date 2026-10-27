@@ -37,9 +37,19 @@ html {
             text-decoration: none;
         }
 
-        nav a:hover {
-            color: #60a5fa;
-        }
+      
+nav a:hover {
+    color: #60a5fa;
+}
+
+nav a:focus-visible,
+.hero a:focus-visible,
+#contact a:focus-visible,
+footer a:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 4px;
+}
+
 
 .hero {
     background: #111827;
