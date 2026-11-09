@@ -161,26 +161,63 @@
 
         /* PROJECT CARDS */
 
-        .card {
-            background: white;
-            margin: 15px auto;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+      /* PROJECTS SECTION */
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
+.section-description {
+    max-width: 650px;
+    margin: 15px auto 30px;
+    color: #6b7280;
+}
 
-        .card h3 {
-            color: #2563eb;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-category {
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-card h3 {
+    color: #111827;
+    margin: 12px 0;
+}
+
+.project-card p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.project-tech {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
         /* ABOUT SECTION */
 
@@ -234,6 +271,9 @@
                 width: 220px;
                 height: 250px;
             }
+            .projects-container {
+    grid-template-columns: 1fr;
+}
         }
 
     </style>
@@ -305,25 +345,48 @@
 
     <!-- PROJECTS SECTION -->
 
-    <section id="projects">
-        <h2>My Projects</h2>
+  <section id="projects">
+    <h2>My Projects</h2>
 
-        <div class="card">
-            <h3>Project One</h3>
-            <p>My first website built using HTML.</p>
+    <p class="section-description">
+        Here are some projects I have worked on while
+        learning programming and web development.
+    </p>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <span class="project-category">WEB DEVELOPMENT</span>
+            <h3>My First Website</h3>
+            <p>
+                A simple website I created to practice
+                HTML and understand how web pages work.
+            </p>
+            <div class="project-tech">HTML</div>
         </div>
 
-        <div class="card">
-            <h3>Project Two</h3>
-            <p>My personal student portfolio website.</p>
+        <div class="project-card">
+            <span class="project-category">WEB DEVELOPMENT</span>
+            <h3>Personal Portfolio</h3>
+            <p>
+                My personal portfolio website, designed
+                to present my skills, progress, and projects.
+            </p>
+            <div class="project-tech">HTML · CSS</div>
         </div>
 
-        <div class="card">
-            <h3>Project Three</h3>
-            <p>A practice project to improve my web development skills.</p>
+        <div class="project-card">
+            <span class="project-category">C++ PROGRAMMING</span>
+            <h3>Employee Payroll System</h3>
+            <p>
+                A C++ project for recording employee
+                working hours and calculating weekly salaries.
+            </p>
+            <div class="project-tech">C++ · Structures · Arrays</div>
         </div>
-    </section>
 
+    </div>
+</section>
     <!-- CONTACT SECTION -->
 
     <section id="contact">
