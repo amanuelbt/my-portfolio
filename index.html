@@ -1,422 +1,957 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanuel Betta | My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Amanuel Betta | Developer Portfolio</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f3f4f6;
-            color: #333;
-            line-height: 1.6;
-        }
+<style>
 
-        header, footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+:root {
+    --background: #080b12;
+    --surface: #10151f;
+    --surface-light: #161d2a;
+    --text: #f4f6fa;
+    --muted: #929baa;
+    --blue: #648cff;
+    --border: rgba(255,255,255,0.09);
+}
 
-        nav {
-            margin-top: 10px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
-        nav a:hover {
-            color: #60a5fa;
-        }
 
-        nav a:focus-visible,
-        .hero-buttons a:focus-visible,
-        #contact a:focus-visible,
-        footer a:focus-visible {
-            outline: 2px solid #60a5fa;
-            outline-offset: 4px;
-        }
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #080b12 !important;
+    color: #f4f6fa;
+    line-height: 1.7;
+    min-height: 100vh;
+}
 
-        /* HERO SECTION */
+html,
+main {
+    background-color: #080b12;
+}
 
-        .hero {
-            background: linear-gradient(135deg, #0f172a, #172554, #1e3a8a);
-            color: white;
-            min-height: 500px;
-            padding: 80px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
+section {
+    background-color: transparent;
+}
 
-        .hero-content {
-            max-width: 600px;
-        }
 
-        .hero-label {
-            color: #60a5fa;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin: 10px 0;
-        }
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .hero h1 span {
-            color: #60a5fa;
-        }
+/* NAVIGATION */
 
-        .hero h2 {
-            font-size: 20px;
-            color: #d1d5db;
-        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,11,18,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
 
-        .hero-description {
-            color: #d1d5db;
-            line-height: 1.8;
-        }
+.navbar {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero-buttons {
-            margin-top: 25px;
-        }
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
 
-        .hero-buttons a {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin: 5px;
-            transition: background 0.3s, transform 0.3s;
-        }
+.logo span {
+    color: var(--blue);
+}
 
-        .hero-buttons a:hover {
-            background: #1d4ed8;
-            transform: translateY(-3px);
-        }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
 
-        .hero-buttons .contact-button {
-            background: transparent;
-            border: 1px solid #60a5fa;
-        }
+nav a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.3s;
+}
 
-        .hero-image {
-            width: 280px;
-            height: 320px;
-            flex-shrink: 0;
-        }
+nav a:hover {
+    color: white;
+}
 
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            border: 2px dashed #60a5fa;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #60a5fa;
-            font-weight: bold;
-        }
+.nav-contact {
+    border: 1px solid var(--border);
+    padding: 10px 19px;
+    border-radius: 30px;
+    color: white;
+}
 
-        /* GENERAL SECTIONS */
+nav a:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 5px;
+}
 
-        section {
-            padding: 30px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: auto;
-        }
+/* HERO */
 
-        section h2::after {
-            content: "";
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: #2563eb;
-            margin: 8px auto 0;
-            border-radius: 5px;
-        }
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        /* PROJECT CARDS */
-        /* PROJECTS SECTION */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: rgba(55,95,220,0.13);
+    filter: blur(130px);
+    border-radius: 50%;
+    right: -100px;
+    top: 20px;
+    pointer-events: none;
+}
 
-        .section-description {
-            max-width: 650px;
-            margin: 15px auto 30px;
-            color: #6b7280;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+    padding: 80px 0;
+}
 
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
+.eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
 
-        .project-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: left;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(45px, 6vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
 
-        .project-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
+.hero h1 span {
+    color: var(--blue);
+}
 
-        .project-category {
-            color: #2563eb;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+.hero h2 {
+    font-size: 19px;
+    color: #c2c9d5;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
 
-        .project-card h3 {
-            color: #111827;
-            font-size: 21px;
-            margin: 12px 0;
-            transition: color 0.3s;
-        }
+.hero-description {
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.9;
+}
 
-        /* (Day 1: duplicate hover rule removed — one copy is enough) */
-        .project-card:hover h3 {
-            color: #2563eb;
-        }
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
 
-        .project-card p {
-            color: #6b7280;
-            font-size: 14px;
-        }
+.button {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-        .project-tech {
-            display: inline-block;
-            background: #eff6ff;
-            color: #2563eb;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+.primary-button {
+    background: var(--blue);
+    color: white;
+}
 
-        /* ABOUT SECTION */
+.primary-button:hover {
+    background: #4775f5;
+    transform: translateY(-3px);
+}
 
-        #about p {
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
+.secondary-button {
+    border: 1px solid var(--border);
+    color: white;
+}
 
-        /* CONTACT SECTION */
+.secondary-button:hover {
+    background: var(--surface-light);
+}
 
-        #contact a {
-            color: #2563eb;
-        }
+.hero-image {
+    position: relative;
+    height: 430px;
+    max-width: 350px;
+    width: 100%;
+    margin-left: auto;
+}
 
-        /* FOOTER */
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(100,140,255,0.4);
+    border-radius: 18px;
+    background: linear-gradient(145deg,#18243b,#10151f);
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 
-        footer {
-            margin-top: 20px;
-        }
+/* INTRO STRIP */
 
-        footer a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
+.intro-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 25px 0;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+.strip-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        /* TABLET RESPONSIVENESS (Day 1) */
-        /* Must stay ABOVE the 500px block so the mobile rule wins on phones */
+.strip-item {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
-        @media (max-width: 768px) {
+/* GENERAL SECTIONS */
 
-            .projects-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+section {
+    padding: 110px 0;
+}
 
-        /* MOBILE RESPONSIVENESS */
+.section-label {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
 
-        @media (max-width: 500px) {
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
-            }
+.section-description {
+    max-width: 620px;
+    color: var(--muted);
+    line-height: 1.9;
+}
 
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-            }
+/* ABOUT */
 
-            .hero h1 {
-                font-size: 32px;
-            }
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
 
-            .hero-image {
-                width: 220px;
-                height: 250px;
-            }
+.about-box {
+    min-height: 310px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: linear-gradient(145deg,#17233b,#10151f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
 
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-        }
+.about-box h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+}
 
-    </style>
+.about-text {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+/* SKILLS */
+
+.skills-section {
+    background: #0c111a;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    padding: 25px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* PROJECTS */
+
+.projects-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(100,140,255,0.6);
+}
+
+.project-visual {
+    min-height: 210px;
+    background: linear-gradient(135deg,#182b4b,#101827);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.project-visual span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: #8ba8ff;
+    text-align: center;
+}
+
+.project-info {
+    padding: 27px;
+}
+
+.project-category {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.project-tech {
+    display: inline-block;
+    margin-top: 18px;
+    margin-right: 6px;
+    padding: 5px 11px;
+    background: rgba(100,140,255,0.1);
+    color: #a5bbff;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 90px 0;
+}
+
+.contact-box {
+    padding: 75px 35px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: radial-gradient(circle at top,#19294a,#10151f 65%);
+}
+
+.contact-box .section-description {
+    margin: 0 auto;
+}
+
+.contact-box .button {
+    margin-top: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--blue);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+
+    .hero-content {
+        grid-template-columns: 1fr 0.7fr;
+        gap: 30px;
+    }
+
+    .about-grid {
+        gap: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 17px 0;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 65px 0;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        height: 320px;
+        width: 250px;
+        margin: 20px auto 0;
+    }
+
+    .strip-content {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .contact-box {
+        padding: 55px 20px;
+    }
+
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media(max-width:380px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+<!-- NAVIGATION -->
 
-    <header>
-        <h2>Amanuel's Portfolio</h2>
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">AMANUEL<span>.</span></a>
 
         <nav>
             <a href="#home">Home</a>
-            <a href="#about">About Me</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-contact">Let's Talk ↗</a>
         </nav>
-    </header>
 
-    <!-- HERO SECTION -->
+    </div>
+</header>
 
-    <div class="hero" id="home">
+<!-- HERO -->
 
-        <div class="hero-content">
+<main>
 
-            <p class="hero-label">WELCOME TO MY PORTFOLIO</p>
+<div class="hero" id="home">
 
-            <h1>Hello, I'm <span>Amanuel Betta</span></h1>
+    <div class="container hero-content">
 
-            <h2>Student | Aspiring Software Developer</h2>
+        <div>
+
+            <p class="eyebrow">WELCOME TO MY DIGITAL SPACE</p>
+
+            <h1>
+                Building Ideas.<br>
+                Creating <span>Solutions.</span>
+            </h1>
+
+            <h2>I'm Amanuel Betta — Student & Aspiring Developer.</h2>
 
             <p class="hero-description">
-                I am passionate about technology, programming,
-                and building useful projects. I am constantly
-                learning and improving my skills.
+                Passionate about technology, programming, and building
+                meaningful digital experiences. I turn ideas into
+                projects while continuously learning and growing.
             </p>
 
             <div class="hero-buttons">
-                <a href="#projects">View My Projects</a>
-                <a href="#contact" class="contact-button">Contact Me</a>
+                <a href="#projects" class="button primary-button">
+                    Explore My Work ↗
+                </a>
+
+                <a href="#contact" class="button secondary-button">
+                    Get In Touch
+                </a>
             </div>
 
         </div>
 
         <div class="hero-image">
+
+            <!-- Replace this placeholder with your personal photo -->
+
             <div class="photo-placeholder">
                 YOUR PHOTO
             </div>
+
         </div>
 
     </div>
 
-    <!-- ABOUT SECTION -->
+</div>
 
-    <section id="about">
-        <h2>About Me</h2>
+<!-- INTRO STRIP -->
 
-        <p>
-            Hello! My name is Amanuel Betta, and I am a student
-            passionate about technology and programming. I am
-            learning HTML, CSS, and C++ to improve my coding skills
-            and build useful projects. I enjoy solving problems,
-            learning new things, and exploring how technology works.
-            My goal is to become a skilled software developer and
-            create projects that make a positive difference.
-        </p>
-    </section>
+<div class="intro-strip">
+    <div class="container strip-content">
 
-    <!-- PROJECTS SECTION -->
+        <span class="strip-item">LEARN</span>
+        <span class="strip-item">CREATE</span>
+        <span class="strip-item">DEVELOP</span>
+        <span class="strip-item">INNOVATE</span>
 
-    <section id="projects">
-        <h2>My Projects</h2>
+    </div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-box">
+            <h3>Curiosity.<br>Creativity.<br>Technology.</h3>
+        </div>
+
+        <div>
+
+            <p class="section-label">01 / ABOUT ME</p>
+
+            <h2 class="section-title">
+                Getting better with every line of code.
+            </h2>
+
+            <p class="about-text">
+                Hello! I'm Amanuel Betta, a student passionate about
+                technology and software development.
+            </p>
+
+            <p class="about-text">
+                I am learning HTML, CSS, and C++, exploring how
+                software works and building practical projects.
+                I enjoy solving problems, experimenting with new
+                ideas, and improving my technical abilities.
+            </p>
+
+            <p class="about-text">
+                My goal is to become a skilled software developer
+                and create useful solutions that make a difference.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="skills-section">
+
+    <div class="container">
+
+        <p class="section-label">02 / MY EXPERTISE</p>
+
+        <h2 class="section-title">Technologies I'm exploring.</h2>
 
         <p class="section-description">
-            Here are some projects I have worked on while
-            learning programming and web development.
+            These are the technologies and programming concepts
+            I am currently learning and developing my skills in.
         </p>
 
-        <div class="projects-container">
+        <div class="skills-grid">
 
-            <div class="project-card">
-                <span class="project-category">WEB DEVELOPMENT</span>
-                <h3>My First Website</h3>
-                <p>
-                    A simple website I created to practice
-                    HTML and understand how web pages work.
-                </p>
-                <div class="project-tech">HTML</div>
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Building structured web pages.</p>
             </div>
 
-            <div class="project-card">
-                <span class="project-category">WEB DEVELOPMENT</span>
-                <h3>Personal Portfolio</h3>
-                <p>
-                    My personal portfolio website, designed
-                    to present my skills, progress, and projects.
-                </p>
-                <div class="project-tech">HTML · CSS</div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Creating modern website designs.</p>
             </div>
 
-            <div class="project-card">
-                <span class="project-category">C++ PROGRAMMING</span>
-                <h3>Employee Payroll System</h3>
-                <p>
-                    A C++ project for recording employee
-                    working hours and calculating weekly salaries.
-                </p>
-                <div class="project-tech">C++ · Structures · Arrays</div>
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>Programming and problem solving.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Learning to build complete websites.</p>
             </div>
 
         </div>
-    </section>
 
-    <!-- CONTACT SECTION -->
+    </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
+</section>
 
-        <p>You can contact me by email:</p>
+<!-- PROJECTS -->
 
-        <a href="mailto:amanuelbetta98@gmail.com">
-            amanuelbetta98@gmail.com
-        </a>
-    </section>
+<section id="projects">
 
-    <!-- FOOTER -->
+    <div class="container">
 
-    <footer>
-        <p>&copy; 2026 Amanuel Betta | My Portfolio</p>
-        <p><a href="#home">Back to Top ↑</a></p>
-    </footer>
+        <div class="projects-heading">
+
+            <div>
+                <p class="section-label">03 / SELECTED WORK</p>
+
+                <h2 class="section-title">Projects I've built.</h2>
+
+                <p class="section-description">
+                    A collection of projects that represent my
+                    learning journey and practical experience.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+
+                <div class="project-visual">
+                    <span>WEB / 01</span>
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">WEB DEVELOPMENT</span>
+
+                    <h3>My First Website</h3>
+
+                    <p>
+                        A website created to practice HTML and
+                        understand the foundations of web development.
+                    </p>
+
+                    <span class="project-tech">HTML</span>
+
+                </div>
+
+            </article>
+
+            <article class="project-card">
+
+                <div class="project-visual">
+                    <span>PORTFOLIO / 02</span>
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">PERSONAL PROJECT</span>
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A personal website designed to showcase
+                        my background, technical skills, and projects.
+                    </p>
+
+                    <span class="project-tech">HTML</span>
+                    <span class="project-tech">CSS</span>
+
+                </div>
+
+            </article>
+
+            <article class="project-card">
+
+                <div class="project-visual">
+                    <span>C++ / 03</span>
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">C++ PROGRAMMING</span>
+
+                    <h3>Employee Payroll System</h3>
+
+                    <p>
+                        A program for recording employee working
+                        hours and calculating weekly salaries.
+                    </p>
+
+                    <span class="project-tech">C++</span>
+                    <span class="project-tech">Arrays</span>
+                    <span class="project-tech">Structures</span>
+
+                </div>
+
+            </article>
+
+            <article class="project-card">
+
+                <div class="project-visual">
+                    <span>MORE / 04</span>
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">CONTINUOUS LEARNING</span>
+
+                    <h3>What's Next?</h3>
+
+                    <p>
+                        Exploring new technologies and developing
+                        more practical projects as I grow as a developer.
+                    </p>
+
+                    <span class="project-tech">Learning</span>
+                    <span class="project-tech">Development</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <p class="section-label">04 / GET IN TOUCH</p>
+
+            <h2 class="section-title">
+                Have an idea?<br>Let's connect.
+            </h2>
+
+            <p class="section-description">
+                I'm always interested in learning, sharing ideas,
+                and connecting with people who love technology.
+                Feel free to reach out.
+            </p>
+
+            <a href="mailto:amanuelbetta98@gmail.com"
+               class="button primary-button">
+                Contact Me ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>© 2026 Amanuel Betta. All rights reserved.</p>
+
+        <p>
+            Designed & Built with passion.
+            <a href="#home">Back to Top ↑</a>
+        </p>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
